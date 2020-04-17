@@ -1,4 +1,4 @@
-## task 1
+## task 1 
 
 
  mkdir -p a/{b/{d/{i/m/z,j/l/z},e},c/{f/h/l/z,g/k/l/z}}
@@ -25,7 +25,24 @@ a
             └── l
                 └── z
                 
-                
+##########################################
+#task 2:     set permision for user to execute date cmd
+date
+which date
+ls -l /bin/date
+chmod -x /bin/date
+date
+adduser -s /bin/date neha
+su - neha
+setfacl -m u:neha:wrx /bin/date
+su - neha
+setfacl -m u:root:--- /bin/date
+chmod -x/bin/date
+date
+
+
+
+
                 
                 
                 
