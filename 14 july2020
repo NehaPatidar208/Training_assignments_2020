@@ -1,1 +1,34 @@
+##########################################
+# task1: create 100 container each 25 of alpine,fedora,centos and java image
+
+import os
+os.system('sudo docker pull alpine')
+os.system('sudo docker pull fedora')
+os.system('sudo docker pull java')
+os.system('sudo docker pull centos')
+
+for i in range(1,26):
+    os.system('sudo docker run -dit --restart unless-stopped --name Adhocnw%d alpine'%i)
+for i in range(26,51):
+    os.system('sudo docker run -dit --restart unless-stopped --name Adhocnw%d fedora'%i)
+for i in range(51,76):
+    os.system('sudo docker run -dit --restart unless-stopped --name Adhocnw%d centos'%i)
+for i in range(76,101):
+    os.system('sudo docker run -dit --restart unless-stopped --name Adhocnw%d java'%i)
+    
+
+#####################################################################
+#task 2: store the list of container and there created time in a file
+
+ docker ps -a --format "table {{.Names}}    {{.CreatedAt}}" >neha_cont.txt
+ 
+ 
+ ####################################################################
+ 
+#tast 3: 
+From centos
+run yum install firefox -y
+cmd /bin/firefox
+
+# docker build -t nehaimg:v1 .
 
